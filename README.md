@@ -1,0 +1,1 @@
+# Hasee-K580c-DSDT-Patch
