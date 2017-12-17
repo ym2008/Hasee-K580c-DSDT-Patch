@@ -6,7 +6,7 @@ There are three branches.
 
 + BCM4322
 
-+ BCM94325HMB
++ BCM94352HMB
 
 
 All Update to macOS 10.13.2. 
