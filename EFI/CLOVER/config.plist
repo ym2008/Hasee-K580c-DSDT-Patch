@@ -428,11 +428,6 @@
 		<key>Timeout</key>
 		<integer>10</integer>
 	</dict>
-	<key>CPU</key>
-	<dict>
-		<key>FrequencyMHz</key>
-		<integer>2400</integer>
-	</dict>
 	<key>Devices</key>
 	<dict>
 		<key>FakeID</key>
