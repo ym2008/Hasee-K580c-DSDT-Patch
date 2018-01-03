@@ -398,6 +398,10 @@
 				<string>DMAR</string>
 			</dict>
 		</array>
+		<key>ResetAddress</key>
+		<string>0x0CF9</string>
+		<key>ResetValue</key>
+		<string>0x06</string>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
