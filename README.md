@@ -43,7 +43,7 @@ What does not work:
 - Dedicated graphics: NVIDIA Geforce GT750M (Disabled in Hotpatch)
 
 
-All update for 10.13.2, such as APFS.efi.
+All update for 10.13.3, such as APFS.efi.
 
 Notes: 
 	
