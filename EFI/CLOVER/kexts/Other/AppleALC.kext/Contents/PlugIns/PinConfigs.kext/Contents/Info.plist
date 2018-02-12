@@ -716,6 +716,24 @@
 					<key>AFGLowPowerState</key>
 					<data>AwAAAA==</data>
 					<key>Codec</key>
+					<string>MacPeet - ALC236 for Lenovo Ideapad 500-15ISK</string>
+					<key>CodecID</key>
+					<integer>283902518</integer>
+					<key>ConfigData</key>
+					<data>
+					ASccAAEnHQEBJx6mAScfkAFHHBABRx0BAUce
+					EAFHH5ABRwwCAZccIAGXHRABlx6LAZcfAAIX
+					HDACFx0QAhceKwIXHwACFwwC
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>15</integer>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>AwAAAA==</data>
+					<key>Codec</key>
 					<string>Mirone - Realtek ALC255</string>
 					<key>CodecID</key>
 					<integer>283902549</integer>
@@ -771,6 +789,26 @@
 					<key>AFGLowPowerState</key>
 					<data>AwAAAA==</data>
 					<key>Codec</key>
+					<string>DuNe - Realtek ALC255 for Aorus X5V7</string>
+					<key>CodecID</key>
+					<integer>283902549</integer>
+					<key>ConfigData</key>
+					<data>
+					ASccEAEnHQABJx6mAScfkAFHHCABRx0AAUce
+					FwFHH5ABtxwhAbcdAAG3HhcBtx+QAXccMAF3
+					HQABdx4AAXcfQAHXHEAB1x0AAdcecAHXH0AC
+					FxxQAhcdEAIXHiECFx8CAaccYAGnHRABpx6B
+					AacfAgHnHHAB5x0QAeceRQHnHwIBRwwC
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>18</integer>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>AwAAAA==</data>
+					<key>Codec</key>
 					<string>ALC255 for Asus X556UA m-dudarev</string>
 					<key>CodecID</key>
 					<integer>283902549</integer>
@@ -801,6 +839,28 @@
 					<integer>1</integer>
 					<key>LayoutID</key>
 					<integer>28</integer>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>AwAAAA==</data>
+					<key>Codec</key>
+					<string>DalianSky - Realtek ALC255 (3246) for XiaoMi Air</string>
+					<key>CodecID</key>
+					<integer>283902549</integer>
+					<key>ConfigData</key>
+					<data>
+					ASccIAEnHQEBJx6mAScfkAE3HPABNx0AATce
+					AAE3H0ABRxxAAUcdAQFHHhcBRx+QAUcMAgF3
+					HPABdx0AAXceAAF3H0ABhxzwAYcdAAGHHgAB
+					hx9AAZccEAGXHRABlx6LAZcfAgGnHPABpx0A
+					AaceAAGnH0ABtxzwAbcdAAG3HgABtx9AAdcc
+					8AHXHQAB1x4AAdcfQAHnHPAB5x0AAeceAAHn
+					H0ACFxwwAhcdEAIXHisCFx8CAhcMAg==
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>99</integer>
 				</dict>
 				<dict>
 					<key>AFGLowPowerState</key>
@@ -846,10 +906,13 @@
 					<integer>283902550</integer>
 					<key>ConfigData</key>
 					<data>
-					ASccEAEnHQABJx6mAScfkAFHHCABRx0AAUce
-					FwFHH5ABlxwwAZcdEAGXHosBlx8CAaccQAGn
-					HRABpx6BAacfAgHXHPAB1x0RAdceEQHXH0EC
-					FxxQAhcdEAIXHisCFx8CAUcMAgIXDAI=
+					ASccIAEnHQEBJx6mAScfkAE3HPABNx0AATce
+					AAE3H0ABRxxAAUcdAQFHHhcBRx+QAUcMAgGH
+					HPABhx0AAYceAAGHH0ABlxwQAZcdEAGXHosB
+					lx8CAacc8AGnHQABpx4AAacfQAG3HPABtx0A
+					AbceAAG3H0AB1xzwAdcdAAHXHgAB1x9AAecc
+					8AHnHQAB5x4AAecfQAIXHDACFx0QAhceKwIX
+					HwICFwwC
 					</data>
 					<key>FuncGroup</key>
 					<integer>1</integer>
@@ -946,6 +1009,25 @@
 					<integer>1</integer>
 					<key>LayoutID</key>
 					<integer>13</integer>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>AwAAAA==</data>
+					<key>Codec</key>
+					<string>MacPeet - ALC262 for HP Z800-Z600 series</string>
+					<key>CodecID</key>
+					<integer>283902562</integer>
+					<key>ConfigData</key>
+					<data>
+					AZccAAGXHREBlx6gAZcfkgGnHBABpx0xAace
+					gAGnH5EBVxwgAVcdQQFXHhABVx+RAWccMAFn
+					HQEBZx4AAWcfKQGHHEABhx2QAYceoAGHH5EB
+					txxQAbcdEAG3HisBtx8C
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>28</integer>
 				</dict>
 				<dict>
 					<key>AFGLowPowerState</key>
@@ -1939,6 +2021,28 @@
 					<key>AFGLowPowerState</key>
 					<data>AwAAAA==</data>
 					<key>Codec</key>
+					<string>Toleda NUC/BRIX patch ALC283</string>
+					<key>CodecID</key>
+					<string>283902595</string>
+					<key>ConfigData</key>
+					<data>
+					AScc8AEnHQABJx4AAScfQAFHHPABRx0AAUce
+					AAFHH0ABdxzwAXcdAAF3HgABdx9AAYcc8AGH
+					HQABhx4AAYcfQAGXHGABlx0wAZceiwGXHwEB
+					pxzwAacdAAGnHgABpx9AAbcc8AG3HQABtx4A
+					AbcfQAHXHPAB1x0AAdceAAHXH0AB5xzwAecd
+					AAHnHgAB5x9AAhcccAIXHUACFx4rAhcfAQGX
+					DAICFwwC
+					</data>
+					<key>FuncGroup</key>
+					<string>1</string>
+					<key>LayoutID</key>
+					<string>1</string>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>AwAAAA==</data>
+					<key>Codec</key>
 					<string>Mirone - Realtek ALC283</string>
 					<key>CodecID</key>
 					<integer>283902595</integer>
@@ -2265,6 +2369,29 @@
 					<key>AFGLowPowerState</key>
 					<data>AwAAAA==</data>
 					<key>Codec</key>
+					<string>DalianSky - Realtek ALC295/ALC3254 Dell7570</string>
+					<key>CodecID</key>
+					<integer>283902613</integer>
+					<key>ConfigData</key>
+					<data>
+					ASccIAEnHQEBJx6mAScfkAE3HPABNx0AATce
+					AAE3H0ABRxxAAUcdAQFHHhcBRx+QAUcMAgFn
+					HPABZx0AAWceAAFnH0ABdxzwAXcdAAF3HgAB
+					dx9AAYcc8AGHHQABhx4AAYcfQAGXHBABlx0Q
+					AZcegQGXHwIBpxzwAacdAAGnHgABpx9AAbcc
+					8AG3HQABtx4AAbcfQAHXHPAB1x0AAdceAAHX
+					H0AB5xzwAecdAAHnHgAB5x9AAhccMAIXHRAC
+					Fx4hAhcfAgIXDAI=
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>13</integer>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>AwAAAA==</data>
+					<key>Codec</key>
 					<string>vusun123 - ALC 295 for Skylake HP Pavilion</string>
 					<key>CodecID</key>
 					<integer>283902613</integer>
@@ -2414,6 +2541,28 @@
 					<integer>1</integer>
 					<key>LayoutID</key>
 					<integer>72</integer>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>AwAAAA==</data>
+					<key>Codec</key>
+					<string>Daliansky - Realtek ALC298 XiaoMi Pro</string>
+					<key>CodecID</key>
+					<integer>283902616</integer>
+					<key>ConfigData</key>
+					<data>
+					ASccIAEnHQABJx6gAScfkAE3HPABNx0AATce
+					AAE3H0ABRxzwAUcdAAFHHgABRx9AAXccQAF3
+					HQABdx4XAXcfkAGHHBABhx0QAYcegQGHHwIB
+					lxzwAZcdAAGXHgABlx9AAacc8AGnHQABpx4A
+					AacfQAHXHPAB1x0AAdceAAHXH0AB5xzwAecd
+					AAHnHgAB5x9AAfcc8AH3HQAB9x4AAfcfQAIX
+					HDACFx0QAhceIQIXHwIBdwwCAhcMAg==
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>99</integer>
 				</dict>
 				<dict>
 					<key>AFGLowPowerState</key>
@@ -3535,6 +3684,23 @@
 					<key>CodecID</key>
 					<integer>283904146</integer>
 					<key>Comment</key>
+					<string>ALC892 with working SPDIF</string>
+					<key>ConfigData</key>
+					<data>
+					AUccEAFHHUABRx4RAUcfAQGHHFABhx2QAYce
+					oAGHH5ABlxxgAZcdkAGXHoEBlx8CAacccAGn
+					HTABpx6BAacfAQG3HIABtx1AAbceIQG3HwEB
+					5xyQAecd4AHnHkUB5x8B
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>98</integer>
+				</dict>
+				<dict>
+					<key>CodecID</key>
+					<integer>283904146</integer>
+					<key>Comment</key>
 					<string>Custom ALC892 DNS P150EM by Constanta</string>
 					<key>ConfigData</key>
 					<data>
@@ -3751,6 +3917,26 @@
 					<integer>1</integer>
 					<key>LayoutID</key>
 					<integer>99</integer>
+				</dict>
+				<dict>
+					<key>CodecID</key>
+					<integer>283904153</integer>
+					<key>Comment</key>
+					<string>ALC898, 4 Line Out by Andrey1970</string>
+					<key>ConfigData</key>
+					<data>
+					AUccAAFHHUABRx4RAUcfkAFXHBABVx0QAVce
+					AQFXHwEBZxwgAWcdYAFnHgEBZx8BAYccMAGH
+					HZABhx6gAYcfkAGnHEABpx0wAacegQGnHwEB
+					lxxQAZcdkAGXHoEBlx8CAbccYAG3HUABtx4h
+					AbcfAgHnHHAB5x1hAeceSwHnHwEBdxyAAXcd
+					IAF3HgEBdx8BAfcc8AH3HQAB9x4AAfcfSQEX
+					HPABFx0AARceAAEXH0k=
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>101</integer>
 				</dict>
 				<dict>
 					<key>AFGLowPowerState</key>
@@ -4867,6 +5053,27 @@
 					<integer>1</integer>
 					<key>LayoutID</key>
 					<integer>33</integer>
+				</dict>
+				<dict>
+					<key>AFGLowPowerState</key>
+					<data>AwAAAA==</data>
+					<key>Codec</key>
+					<string>macish - IDT 92HD91BXX for HP Elitebook G1</string>
+					<key>CodecID</key>
+					<integer>287143648</integer>
+					<key>ConfigData</key>
+					<data>
+					AKccAACnHRAApx6BAKcfAQC3HBAAtx0QALce
+					IQC3HwMAxxwgAMcdAADHHgAAxx9JARccMAEX
+					HQABFx6gARcfmQD3HEAA9x0BAPceFwD3H5kA
+					5xxQAOcdEADnHgEA5x8jAQccYAEHHQABBx4A
+					AQcfSQH3HHAB9x0AAfceAAH3H0kCBxyAAgcd
+					AAIHHgACBx9J
+					</data>
+					<key>FuncGroup</key>
+					<integer>1</integer>
+					<key>LayoutID</key>
+					<integer>84</integer>
 				</dict>
 				<dict>
 					<key>AFGLowPowerState</key>
