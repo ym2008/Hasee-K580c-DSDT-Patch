@@ -336,6 +336,26 @@
 				</dict>
 			</dict>
 		</dict>
+		<key>Broadcom 802.11 PCI</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.apple.driver.AirPort.Brcm4360</string>
+			<key>IOClass</key>
+			<string>AirPort_Brcm4360</string>
+			<key>IOMatchCategory</key>
+			<string>IODefaultMatchCategory</string>
+			<key>IONameMatch</key>
+			<array>
+				<string>pci14e4,43b1</string>
+				<string>pci14e4,4353</string>
+			</array>
+			<key>IOProbeScore</key>
+			<integer>1220</integer>
+			<key>IOProviderClass</key>
+			<string>IOPCIDevice</string>
+			<key>TruePowerOff</key>
+			<true/>
+		</dict>
 		<key>FakeSMC</key>
 		<dict>
 			<key>CFBundleIdentifier</key>

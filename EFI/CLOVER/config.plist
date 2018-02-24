@@ -16,6 +16,8 @@
 				<true/>
 				<key>FixACST</key>
 				<true/>
+				<key>FixAirport</key>
+				<true/>
 				<key>FixHPET</key>
 				<true/>
 				<key>FixHeaders</key>
@@ -424,7 +426,7 @@
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>NeverHibernate</key>
-		<true/>
+		<false/>
 		<key>NoEarlyProgress</key>
 		<true/>
 		<key>Secure</key>
@@ -462,7 +464,7 @@
 			<string>Preboot</string>
 		</array>
 		<key>Language</key>
-		<string>zh_Hans</string>
+		<string>zh_Hans:0</string>
 		<key>Mouse</key>
 		<dict>
 			<key>Enabled</key>
@@ -493,7 +495,7 @@
 			<key>Intel</key>
 			<true/>
 			<key>NVidia</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>ig-platform-id</key>
 		<string>0x0a260006</string>
@@ -529,11 +531,33 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Enable TRIM for SSD</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				AEFQUExFIFNTRAA=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string> 0x0a260006 9MB cursor bytes (vbo), 2 ports only (RehabMan)</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				BgAmCgEDAwMAAAACAAAwAQAAYAA=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -544,10 +568,14 @@
 			<dict>
 				<key>Comment</key>
 				<string>Second stage patch</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				AQAAdSI=
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>MatchOS</key>
 				<string>10.13.x</string>
 				<key>Name</key>
@@ -566,6 +594,8 @@
 				<data>
 				AQUJAAAEAACHAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
@@ -582,27 +612,13 @@
 				<data>
 				AgQJAAAEAACHAAAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
 				<key>Replace</key>
 				<data>
 				/wAAAAEAAABAAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Enable TRIM for SSD</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				AEFQUExFIFNTRAA=
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAAA=
 				</data>
 			</dict>
 			<dict>
@@ -614,29 +630,13 @@
 				<data>
 				RiV1VCUwNHgA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.AppleBacklight</string>
 				<key>Replace</key>
 				<data>
 				RiV1VHh4eHgA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change 15 port limit to 26 in XHCI kext</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				g32MEA==
-				</data>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
-				<key>Name</key>
-				<string> AppleUSBXHCIPCI</string>
-				<key>Replace</key>
-				<data>
-				g32MGw==
 				</data>
 			</dict>
 		</array>
