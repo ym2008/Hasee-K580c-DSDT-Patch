@@ -11,4 +11,6 @@ There are three branches.
 
 All Update to macOS 10.13.3. 
 
+Please update your Clover to the lastest version.
+
 Weibo: https://weibo.com/u/2302182827.
