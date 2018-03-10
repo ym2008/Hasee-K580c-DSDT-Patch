@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>17D102</string>
+	<string>16G1212</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -81,6 +81,8 @@
 	<dict>
 		<key>as.vit9696.Lilu</key>
 		<string>1.2.0</string>
+		<key>com.apple.iokit.IOPCIFamily</key>
+		<string>1.0.0b1</string>
 		<key>com.apple.kpi.bsd</key>
 		<string>12.0.0</string>
 		<key>com.apple.kpi.dsep</key>
