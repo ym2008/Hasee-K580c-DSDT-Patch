@@ -427,12 +427,8 @@
 		<string>LastBootedVolume</string>
 		<key>HibernationFixup</key>
 		<true/>
-		<key>NeverHibernate</key>
-		<false/>
 		<key>NoEarlyProgress</key>
 		<true/>
-		<key>Secure</key>
-		<false/>
 		<key>SignatureFixup</key>
 		<true/>
 		<key>Timeout</key>
@@ -645,7 +641,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>change 15 port limit to 26 in XHCI kext</string>
+				<string>change 15 port limit to 26 in XHCI kext 10.13_10.13.3</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
@@ -654,11 +650,33 @@
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
+				<key>MatchOS</key>
+				<string>10.13.0,10.13.1,10.13.2,10.13.3</string>
 				<key>Name</key>
-				<string>AppleUSBXHCIPCI</string>
+				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
 				<key>Replace</key>
 				<data>
-				g32MFQ==
+				g32MGw==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>change 15 port limit to 26 in XHCI kext 10.13.4</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g32UDw+DlwQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.4</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g32UGg+DlwQ=
 				</data>
 			</dict>
 		</array>
