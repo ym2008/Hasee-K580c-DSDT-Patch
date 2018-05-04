@@ -9,8 +9,8 @@ There are three branches.
 + BCM94352HMB
 
 
-All Update to macOS 10.13.4. 
+All Update to macOS 10.13.4 (17E202). 
 
-Please update your Clover to the lastest version.
+Notice: Please update your Clover to the lastest version!
 
 Weibo: https://weibo.com/u/2302182827.
