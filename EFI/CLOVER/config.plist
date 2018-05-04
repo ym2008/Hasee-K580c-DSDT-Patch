@@ -20,8 +20,6 @@
 				<true/>
 				<key>FixHPET</key>
 				<true/>
-				<key>FixHeaders</key>
-				<true/>
 				<key>FixIPIC</key>
 				<true/>
 				<key>FixMutex</key>
@@ -400,6 +398,8 @@
 				<string>DMAR</string>
 			</dict>
 		</array>
+		<key>FixHeaders</key>
+		<true/>
 		<key>ResetAddress</key>
 		<string>0x0CF9</string>
 		<key>ResetValue</key>
@@ -422,12 +422,14 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -liluforce -lilubetaall -hbfx-patch-pci -alcbeta -igfxbeta igfxfw=1 igfxrst=1 nv_disable=1 brcmfx-country=HK -brcmfxbeta -bt4lefxbeta</string>
+		<string>dart=0 -liluforce -lilubetaall -hbfx-patch-pci -alcbeta -igfxbeta igfxfw=1 igfxrst=1 nv_disable=1 brcmfx-country=HK -brcmfxbeta</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>HibernationFixup</key>
 		<true/>
 		<key>NoEarlyProgress</key>
+		<true/>
+		<key>RtcHibernateAware</key>
 		<true/>
 		<key>SignatureFixup</key>
 		<true/>
@@ -440,6 +442,8 @@
 		<dict>
 			<key>IntelGFX</key>
 			<string>0x04128086</string>
+			<key>WIFI</key>
+			<string>0x43A014E4</string>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -447,8 +451,6 @@
 			<true/>
 			<key>HighCurrent</key>
 			<true/>
-			<key>Inject</key>
-			<false/>
 		</dict>
 	</dict>
 	<key>DisableDrivers</key>
@@ -484,7 +486,7 @@
 		<key>ScreenResolution</key>
 		<string>1366x768</string>
 		<key>Theme</key>
-		<string>bootcamp2.0</string>
+		<string>Hasee</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -549,24 +551,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string> 0x0a260006 9MB cursor bytes (vbo), 2 ports only (RehabMan)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				BgAmCgEDAwMAAAACAAAwAQAAYAA=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				BgAmCgEDAgIAAAACAAAwAQAAkAA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Second stage patch</string>
 				<key>Disabled</key>
 				<false/>
@@ -583,6 +567,24 @@
 				<key>Replace</key>
 				<data>
 				AQAA6yI=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string> 0x0a260006 9MB cursor bytes (vbo), 2 ports only 2048MB (YM2008)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				BgAmCgEDAwMAAAACAAAwAQAAYAAAAABg
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>
+				BgAmCgEDAgIAAAACAAAwAQAAkAAAAACA
 				</data>
 			</dict>
 			<dict>
@@ -623,6 +625,24 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Enable 128MB DVMT-prealloc, 48MB framebuffer, 48MB cursor bytes, 0x0a260006</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				BgAmCgEDAwMAAAACAAAwAQAAYAA=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>
+				BgAmCgEDAwMAAAAIAAAAAwAAAAM=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>change F%uT%04x to F%uTxxxx for AppleBacklightInjector.kext (credit RehabMan)</string>
 				<key>Disabled</key>
 				<false/>
@@ -637,24 +657,6 @@
 				<key>Replace</key>
 				<data>
 				RiV1VHh4eHgA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>AirPortBrcm4360 - fcvo</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				gflSqgAAdSk=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				gflSqgAAZpA=
 				</data>
 			</dict>
 			<dict>
@@ -684,17 +686,35 @@
 				<false/>
 				<key>Find</key>
 				<data>
-				g32UDw+DlwQ=
+				g32UDw+DlwQAAA==
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
 				<key>MatchOS</key>
-				<string>10.13.4</string>
+				<string>10.13.4,10.13.5,10.14.x</string>
 				<key>Name</key>
 				<string>com.apple.driver.usb.AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				g32UGg+DlwQ=
+				g32UGpCQkJCQkA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.11+-BT4LE-Handoff-Hotspot-lisai9093</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SIX/dEdIiwc=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>IOBluetoothFamily</string>
+				<key>Replace</key>
+				<data>
+				Qb4PAAAA60Q=
 				</data>
 			</dict>
 		</array>
@@ -709,11 +729,11 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>05/01/17</string>
+		<string>02/02/2018</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP112.88Z.0138.B38.1705011718</string>
+		<string>MBP112.88Z.0144.B00.1802021223</string>
 		<key>Board-ID</key>
 		<string>Mac-3CBD00234E554E41</string>
 		<key>BoardManufacturer</key>
@@ -722,31 +742,39 @@
 		<string>C024266007UFK0111</string>
 		<key>BoardType</key>
 		<integer>10</integer>
+		<key>BoardVersion</key>
+		<string>1.0</string>
 		<key>ChassisAssetTag</key>
 		<string>MacBook-Aluminum</string>
 		<key>ChassisManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>ChassisType</key>
-		<string>08</string>
+		<string>0x0A</string>
 		<key>Family</key>
 		<string>MacBook Pro</string>
 		<key>FirmwareFeatures</key>
-		<string>0xFC0FE136</string>
+		<string>0xE80FE137</string>
+		<key>FirmwareFeaturesMask</key>
+		<string>0xFF1FFF3F</string>
+		<key>LocationInChassis</key>
+		<string>Part Component</string>
 		<key>Manufacturer</key>
 		<string>Apple Inc.</string>
 		<key>Mobile</key>
 		<true/>
+		<key>PlatformFeature</key>
+		<string>0x02</string>
 		<key>ProductName</key>
 		<string>MacBookPro11,2</string>
 		<key>SerialNumber</key>
 		<string>C02L7V1PFD56</string>
-		<key>Trust</key>
-		<true/>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
+		<key>ExposeSysVariables</key>
+		<true/>
 		<key>InjectKexts</key>
 		<string>Detect</string>
 		<key>InjectSystemID</key>
