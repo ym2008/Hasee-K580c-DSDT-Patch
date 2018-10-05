@@ -8,6 +8,8 @@
 		<true/>
 		<key>DSDT</key>
 		<dict>
+			<key>DropOEM_DSM</key>
+			<false/>
 			<key>Fixes</key>
 			<dict>
 				<key>AddDTGP</key>
@@ -15,8 +17,6 @@
 				<key>AddMCHC</key>
 				<true/>
 				<key>FixACST</key>
-				<true/>
-				<key>FixAirport</key>
 				<true/>
 				<key>FixHPET</key>
 				<true/>
@@ -387,18 +387,9 @@
 				</dict>
 			</array>
 		</dict>
-		<key>DropTables</key>
-		<array>
-			<dict>
-				<key>Signature</key>
-				<string>MATS</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
-			</dict>
-		</array>
 		<key>FixHeaders</key>
+		<true/>
+		<key>FixMCFG</key>
 		<true/>
 		<key>ResetAddress</key>
 		<string>0x0CF9</string>
@@ -406,8 +397,6 @@
 		<string>0x06</string>
 		<key>SSDT</key>
 		<dict>
-			<key>DropOem</key>
-			<false/>
 			<key>Generate</key>
 			<dict>
 				<key>PluginType</key>
@@ -416,16 +405,18 @@
 			<key>NoDynamicExtract</key>
 			<true/>
 			<key>NoOemTableId</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -liluforce -lilubetaall -hbfx-patch-pci -alcbeta -igfxbeta igfxrst=1 igfxfw=1 nv_disable=1 -ath9485</string>
+		<string>-ath9485 -wegbeta -cdfon dart=0 -alcbeta -liluforce igfxrst=1 -vsmcbeta -lilubetaall -cdfbeta</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>HibernationFixup</key>
+		<true/>
+		<key>NeverHibernate</key>
 		<true/>
 		<key>NoEarlyProgress</key>
 		<true/>
@@ -438,10 +429,96 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
-		<key>FakeID</key>
+		<key>AddProperties</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Inject "name" as (data)"#display" to disable graphics drivers on NVidia</string>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Key</key>
+				<string>name</string>
+				<key>Value</key>
+				<data>
+				I2Rpc3BsYXkA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Inject "IOName" as "#display" to disable graphics drivers on NVidia</string>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Key</key>
+				<string>IOName</string>
+				<key>Value</key>
+				<string>#display</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Inject bogus class-code to prevent graphics drivers loading for NVidia</string>
+				<key>Device</key>
+				<string>NVidia</string>
+				<key>Key</key>
+				<string>class-code</string>
+				<key>Value</key>
+				<data>
+				/////w==
+				</data>
+			</dict>
+		</array>
+		<key>LpcTune</key>
+		<true/>
+		<key>Properties</key>
 		<dict>
-			<key>IntelGFX</key>
-			<string>0x04128086</string>
+			<key>PciRoot(0)/Pci(0x02,0)</key>
+			<dict>
+				<key>AAPL,ig-platform-id</key>
+				<data>
+				BgAmCg==
+				</data>
+				<key>device-id</key>
+				<data>
+				EgQAAA==
+				</data>
+				<key>framebuffer-con1-enable</key>
+				<integer>1</integer>
+				<key>framebuffer-con1-type</key>
+				<data>
+				AAgAAA==
+				</data>
+				<key>framebuffer-con2-enable</key>
+				<integer>1</integer>
+				<key>framebuffer-con2-index</key>
+				<data>
+				/////w==
+				</data>
+				<key>framebuffer-cursormem</key>
+				<data>
+				AACQAA==
+				</data>
+				<key>framebuffer-fbmem</key>
+				<data>
+				AACQAA==
+				</data>
+				<key>framebuffer-patch-enable</key>
+				<integer>1</integer>
+				<key>framebuffer-pipecount</key>
+				<data>
+				AgAAAA==
+				</data>
+				<key>framebuffer-portcount</key>
+				<data>
+				AgAAAA==
+				</data>
+				<key>framebuffer-stolenmem</key>
+				<data>
+				AAAwAQ==
+				</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>
+				AAAAgA==
+				</data>
+			</dict>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -493,12 +570,10 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
-		<key>ig-platform-id</key>
-		<string>0x0a260006</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -549,98 +624,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Second stage patch</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				AQAAdSI=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAA6yI=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string> 0x0a260006 9MB cursor bytes (vbo), 2 ports only 2048MB (YM2008)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				BgAmCgEDAwMAAAACAAAwAQAAYAAAAABg
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				BgAmCgEDAgIAAAACAAAwAQAAkAAAAACA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>HDMI-audio, port 0105(12), 0x0a260005 0x0a260006, 0x0d220003, 0x0a2e000a, 0x0a26000a</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				AQUJAAAEAACHAAAA
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				AQUSAAAIAACHAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>0x0a260006, disable 0204 port (RehabMan)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				AgQJAAAEAACHAAAA
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				/wAAAAEAAABAAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Enable 128MB DVMT-prealloc, 48MB framebuffer, 48MB cursor bytes, 0x0a260006</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				BgAmCgEDAwMAAAACAAAwAQAAYAA=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelFramebufferAzul</string>
-				<key>Replace</key>
-				<data>
-				BgAmCgEDAwMAAAAIAAAAAwAAAAM=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>change F%uT%04x to F%uTxxxx for AppleBacklightInjector.kext (credit RehabMan)</string>
 				<key>Disabled</key>
 				<false/>
@@ -659,42 +642,42 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>change 15 port limit to 26 in XHCI kext 10.13_10.13.3</string>
+				<string>change 15 port limit to 26 in XHCI kext 10.14.x</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
 				<data>
-				g32MEA==
+				g/sPD4MDBQAA
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
 				<key>MatchOS</key>
-				<string>10.13.0,10.13.1,10.13.2,10.13.3</string>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
-				<key>Replace</key>
-				<data>
-				g32MGw==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>change 15 port limit to 26 in XHCI kext 10.13.4</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				g32UDw+DlwQAAA==
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>MatchOS</key>
-				<string>10.13.4,10.13.5,10.14.x</string>
+				<string>10.14,10.14.x</string>
 				<key>Name</key>
 				<string>com.apple.driver.usb.AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				g32UGpCQkJCQkA==
+				g/sPkJCQkJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>AirPortBrcm4360 whitelist patch (board-id), 10.13.x/10.14.x, credit RehabMan</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SDtF4HUU
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.13.x,10.14.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.AirPort.Brcm4360</string>
+				<key>Replace</key>
+				<data>
+				/8OQkJCQ
 				</data>
 			</dict>
 		</array>
@@ -709,11 +692,11 @@
 	<key>SMBIOS</key>
 	<dict>
 		<key>BiosReleaseDate</key>
-		<string>02/02/2018</string>
+		<string>04/11/2018</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP112.88Z.0144.B00.1802021223</string>
+		<string>MBP112.88Z.0146.B00.1804111138</string>
 		<key>Board-ID</key>
 		<string>Mac-3CBD00234E554E41</string>
 		<key>BoardManufacturer</key>
@@ -748,6 +731,8 @@
 		<string>MacBookPro11,2</string>
 		<key>SerialNumber</key>
 		<string>C02L7V1PFD56</string>
+		<key>Trust</key>
+		<true/>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
